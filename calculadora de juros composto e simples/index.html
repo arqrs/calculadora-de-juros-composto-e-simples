@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora de Juros — Simples & Compostos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Calculadora de Juros</h1>
+
+    <form id="calcForm">
+      <label>Capital inicial
+        <input id="capital" type="number" step="any" min="0" placeholder="1000" required>
+        <small class="error" id="err-capital"></small>
+      </label>
+
+      <label>Taxa anual (%)
+        <input id="taxa" type="number" step="any" placeholder="5" required>
+        <small class="error" id="err-taxa"></small>
+      </label>
+
+      <label>Tempo (anos)
+        <input id="tempo" type="number" step="any" placeholder="2" required>
+        <small class="error" id="err-tempo"></small>
+      </label>
+
+      <fieldset class="modo">
+        <legend>Modo</legend>
+        <label><input name="modo" type="radio" value="composto" checked> Composto</label>
+        <label><input name="modo" type="radio" value="simples"> Simples</label>
+      </fieldset>
+
+      <label id="periodosLabel">Compostos por ano
+        <input id="periodos" type="number" min="1" step="1" value="1">
+      </label>
+
+      <div class="actions">
+        <button id="submitBtn" type="button" disabled>Calcular</button>
+        <button id="clear" type="button">Limpar</button>
+      </div>
+    </form>
+
+    <section id="resultado" class="resultado hidden">
+      <h2>Resultado</h2>
+      <p id="tipo"></p>
+      <p id="capitalOut"></p>
+      <p id="taxaOut"></p>
+      <p id="tempoOut"></p>
+      <p id="periodosOut"></p>
+      <p id="montanteOut"></p>
+      <p id="jurosOut"></p>
+    </section>
+
+    <footer>
+      <small>Abra este arquivo com Live Server ou diretamente no navegador.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
